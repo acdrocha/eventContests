@@ -15,5 +15,22 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <strong>Number of contests:</strong>
+  <%= @event.contests.size%>
+
+  <br>
+  <%= link_to 'Goto Contests', event_contests_path(@event) %>
+</p>
+
+
+<p>
+  <strong>Number of players:</strong>
+  <%= @event.players.size%>
+
+  <br>
+  <%= link_to 'Go to Players', event_players_path(@event) %>
+</p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

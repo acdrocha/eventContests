@@ -1,4 +1,4 @@
-<%= form_with(model: player, local: true) do |form| %>
+<%= form_for([@event, @player]) do |form| %>
   <% if player.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being saved:</h2>
@@ -10,11 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :event_id %>
-    <%= form.text_field :event_id, id: :player_event_id %>
-  </div>
 
   <div class="field">
     <%= form.label :name %>
